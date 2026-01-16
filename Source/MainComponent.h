@@ -11,7 +11,6 @@ public:
     void resized() override;
 
 private:
-    // Componentes da UI
     juce::Label urlLabel;
     juce::TextEditor urlInput;
 
@@ -19,7 +18,7 @@ private:
     juce::ComboBox formatBox;
 
     juce::Label qualityLabel;
-    juce::ComboBox qualityBox; // 1080p, 4K, etc.
+    juce::ComboBox qualityBox;
 
     juce::TextButton chooseDirBtn;
     juce::Label selectedDirLabel;
@@ -27,11 +26,9 @@ private:
     juce::TextButton downloadBtn;
     juce::Label statusLabel;
 
-    // Variáveis de estado
     juce::File downloadFolder;
     std::unique_ptr<juce::FileChooser> fileChooser;
 
-    // Funções lógicas
     void chooseFolder();
     void startDownload();
     void runYtDlpCommand(juce::String url, juce::String path, bool isAudioOnly, juce::String heightLimit);
